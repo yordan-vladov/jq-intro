@@ -56,9 +56,7 @@ jq '.[] | select(.price>0.5)' fruits.json
 jq '.[] | select(.color=="yellow")' fruits.json
 jq '.[] | select(.color=="yellow" and .price>=0.5)' fruits.json
 jq '.[] | to_entries[] | select(.key | startswith("name")) | .value' fruits.json
-"apple"
-"banana"
-"kiwi"
+
 
 printf "\n17. regular expression\n"
 jq '.[] | select(.name|test("^a.")) | .price' fruits.json
